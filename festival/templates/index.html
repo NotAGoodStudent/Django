@@ -1,0 +1,134 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      <link rel="stylesheet" href="{% static 'css/mainPage.css' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href={% url 'home' %}>Azure</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href={% url 'home' %}>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'logout' %}><span class="icon">
+                  <i class="fas fa-sign-out-alt text-danger" style="font-weight: bold;"></i>
+                </span>Logout</a>
+            </li>
+          {% else %}
+               <li class="nav-item">
+                <a class="nav-link" href={% url 'login' %}><span class="icon">
+                  <i class="fas fa-user text-primary" style="font-weight: bold;"></i>
+                </span>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'register' %}><span class="icon">
+                  <i class="fas fa-sign-out-alt text-primary" style="font-weight: bold;"></i>
+                </span>Register</a>
+            </li>
+          {% endif %}
+        </ul>
+  </div>
+</nav>
+  <body>
+   <div class="mainPart">
+        <div class="mainInfo">
+            <img src="https://wallpaperaccess.com/full/4394944.png" alt="">
+            <div class="info">
+                <h2 class="font-monospace" style="font-size: 10vmin">Book tickets</h2>
+                <p style="font-size: 2vmin"> and see your favourite artists live!<span class="text-primary"> #LiveLife</span></p>
+                <button class="btn btn-primary " onclick="location.href = {% url 'register' %}" style="margin-top: 3%; padding: 1.5%; font-weight: bold;letter-spacing: 1.2px; color: #202020">
+                <span class="icon">
+                  <i class="far fa-user" style="font-weight: bold; filter: invert(100%)"></i>
+                </span>
+                    <span><a style="text-decoration: none;color:white;">Register now!</a> </span>
+                </button>
+            </div>
+        </div>
+    </div>
+  <div class="secondPart">
+      <div class="container d-flex justify-content-around">
+          <div class="menu1">
+                    <div class="menuInfo">
+                        <p style="text-align: center; font-weight: bold">Socialize</p>
+                        <p>Meet new people and enjoy the concerts together!</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="button" style="margin-top: 3%; padding: 1.5%; font-weight: bold;letter-spacing: 1.2px">
+                            <span class="icon">
+                              <i class="far fa-user" style="font-weight: bold; filter: invert(100%)"></i>
+                            </span>
+                            <span>Explore..</span>
+                        </a>
+                    </div>
+                    <div class="menuImage d-flex justify-content-center">
+                        <img style="filter: invert(100%)" src="{% static 'imgs/people.svg' %}" width=200vmin" >
+                    </div>
+            </div>
+           <div class="menu2">
+              <div>
+                    <div class="menuInfo">
+                        <p style="text-align: center; font-weight: bold">Purchase tickets</p>
+                        <p>Purchase tickets now and get to see your favourite artists perform live</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="button" style="margin-top: 3%; padding: 1.5%; font-weight: bold;letter-spacing: 1.2px">
+                            <span class="icon">
+                              <i class="far fa-user" style="font-weight: bold; filter: invert(100%)"></i>
+                            </span>
+                            <span>Explore..</span>
+                        </a>
+                    </div>
+                    <div class="menuImage d-flex justify-content-center">
+                        <img style="filter: invert(100%)" src="{% static 'imgs/ticket.svg' %}" width=200vmin" >
+                    </div>
+                </div>
+            </div>
+           <div class="menu3">
+              <div>
+                    <div class="menuInfo">
+                        <p style="text-align: center; font-weight: bold">Visit the bar</p>
+                        <p>Right after each concert, you can hang out with your friends at our bar</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="button" style="margin-top: 3%; padding: 1.5%; font-weight: bold;letter-spacing: 1.2px">
+                            <span class="icon">
+                              <i class="far fa-user" style="font-weight: bold; filter: invert(100%)"></i>
+                            </span>
+                            <span>Explore..</span>
+                        </a>
+                    </div>
+                    <div class="menuImage d-flex justify-content-center">
+                        <img style="filter: invert(100%)" src="{% static 'imgs/drink.svg' %}" width=200vmin" >
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>

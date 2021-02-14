@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+ phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  environment:
+   PMA_HOST: dbjango.cj8brtpby98t.us-east-1.rds.amazonaws.com
+  ports:
+   - "8090:80"

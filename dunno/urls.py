@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from festival.views import HelloWorld, LoginView, RegisterView, LogoutView
+from festival.views import HelloWorld, LoginView, RegisterView, LogoutView, TicketView, BookingView, CheckBookings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', HelloWorld.as_view(), name='home'),
     path('login/', LoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
-    path('logout/', LogoutView.as_view(), name='logout')
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('createTicket/', TicketView.as_view(), name='ticket'),
+    path('book/', BookingView.as_view(), name='book'),
+    path('myBookings/', CheckBookings.as_view(), name='myBookings')
 ]

@@ -26,13 +26,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href={% url 'home' %}>Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        {% if user.is_authenticated and user.is_superuser %}
+               <li class="nav-item">
+                    <a class="nav-link" href={% url 'ticket' %}>Add Tickets</a>
+                </li>
+             <li class="nav-item">
+                  <a class="nav-link" href={% url 'book' %}>Tickets</a>
+                </li>
+          <a class="nav-link" href={% url 'myBookings' %}>My bookings</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+              {% elif user.is_authenticated %}
+               <li class="nav-item">
+                  <a class="nav-link" href={% url 'book' %}>Tickets</a>
+                </li>
+          <a class="nav-link" href={% url 'myBookings' %}>My bookings</a>
         </li>
       </ul>
+          {% endif %}
+
     </div>
       <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
@@ -78,4 +89,15 @@
             </div>
         </div>
   </body>
+<footer>
+    <div class="footerContent">
+        <div class="faBox">
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-facebook"></a>
+        </div>
+        <p>&copy; Stephen Donoghue</p>
+    </div>
+</footer>
 </html>

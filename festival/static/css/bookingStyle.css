@@ -1,0 +1,101 @@
+.products
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15%;
+    margin-top: 2%;
+}
+
+.product-card
+{
+    width: 40%;
+    box-shadow: 0 0 20px rgba(0,0,0, 1);
+    padding: 2%;
+    flex-direction: column;
+    display: flex;
+    flex: 1 16%;
+    background-color: #202020;
+    margin: 2% 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.product-image img
+{
+    width: 770px;
+    right: 50%;
+    left: 50%;
+    border-radius: 10px;
+}
+
+.product-info
+{
+    padding-top: 20px;
+    width: 100%;
+}
+
+.product-buttons
+{
+    width: 100%;
+
+}
+
+.add, .sub
+{
+    width: 100px;
+}
+
+.clearButtons
+{
+    width: 100%;
+    text-align: center;
+}
+
+.clear
+{
+    margin-right: 50px;
+}
+
+.product-card input[type="number"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.product-card input[type="number"]:focus
+{
+    width: 300px;
+    border-color: #2ecc71
+}
+
+
+.product-card button[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    width: 100px;
+    height: 50px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.product-card button[type="submit"]:hover {
+    background: #2ecc71
+}

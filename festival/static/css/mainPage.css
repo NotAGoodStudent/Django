@@ -1,3 +1,5 @@
+
+
 nav{
     background-color: #181818;
 }
@@ -49,6 +51,7 @@ h2
 
 .menu1 > div *,.menu2 > div *,.menu3 > div *{
     margin:2%
+
 }
 
 .buttons > a:hover
@@ -94,3 +97,41 @@ h2
     border-radius: 2%;
     border:1px solid #1E2329;
 }
+
+footer
+    {
+        margin-top: 60em;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: transparent;
+        min-height: 6vh;
+    }
+    footer p
+    {
+        color: white;
+        bottom: 0;
+        margin-top: 5px;
+        text-align: center;
+    }
+    .faBox
+    {
+        font-size: 40px;
+        width: 100%;
+        justify-content: space-around;
+        text-align: center;
+        display: flex;
+    }
+
+    .fab
+    {
+        color: #0d6efd;
+        text-decoration: none;
+    }
+    .fab:hover
+    {
+        color: #2ecc71;
+        transform: scale(1.5);
+        transition: all ease 500ms;
+        cursor: pointer;
+    }

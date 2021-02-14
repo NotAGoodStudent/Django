@@ -6,7 +6,7 @@ from django.db.models import CASCADE
 
 class Tickets(models.Model):
     ticketID = models.AutoField(primary_key=True)
-    artistName = models.CharField(max_length=20)
+    artistName = models.CharField(max_length=20, unique=True)
     stock = models.IntegerField()
 
 class Bookings(models.Model):
